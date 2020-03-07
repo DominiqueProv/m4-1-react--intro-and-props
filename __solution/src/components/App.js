@@ -6,16 +6,17 @@ import Footer from './Footer';
 
 import './App.css';
 
-function App(props) {
+function App({currentUser, conversation} ) {
+    // console.log(props)
   return (
     <div className="wrapper">
       <Header
-        currentUser={props.currentUser}
-        participants={props.conversation.participants}
+        currentUser={currentUser}
+        participants={conversation.participants}
       />
       <ChatStream
-        currentUser={props.currentUser}
-        messages={props.conversation.messages}
+        currentUser={currentUser}
+        messages={conversation.messages}
       />
       <Footer />
     </div>

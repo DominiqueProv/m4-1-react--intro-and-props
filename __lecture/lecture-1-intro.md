@@ -174,10 +174,11 @@ Convert this JSX snippet to HTML:
 let birthdayCakeImage = '/images/cake.jpg';
 let age = 10;
 
-<div className="wrapper">
-  <img src={birthdayCakeImage} />
-  <p>Happy {age}th birthday!</p>
-</div>;
+<div class="wrapper">
+  <img src='/images/cake.jpg' />
+  <p>Happy 10th birthday!</p>
+</div>
+
 ```
 
 ---
@@ -188,14 +189,10 @@ Convert this one too:
 let agreeToTerms = false;
 
 <div>
-  <label htmlFor="terms-of-service">
+  <label for="terms-of-service">
     <input type="checkbox" id="terms-of-service" /> I agree to the terms
   </label>
-
-  {agreeToTerms && (
-    <div>YOUR SOUL BELONGS TO ME MWAHAHAHAHAAAAAAHHHHHH!!!1</div>
-  )}
-</div>;
+</div>
 ```
 
 ---
@@ -219,10 +216,10 @@ const pets = [
 ];
 
 <div>
-  <h1 className="title">My pets:</h1>
+  <h1 class="title">My pets:</h1>
   <ul>
     <li>
-      <h3>{pets[0].name}</h3>
+      <h3>Bark Obama</h3>
       <table>
         <thead>
           <tr>
@@ -233,16 +230,16 @@ const pets = [
         </thead>
         <tbody>
           <tr>
-            <td>{pets[0].age}</td>
-            <td>{pets[0].species}</td>
-            <td>{pets[0].breed}</td>
+            <td>3</td>
+            <td>dog</td>
+            <td>Labradoodle</td>
           </tr>
         </tbody>
       </table>
     </li>
 
     <li>
-      <h3>{pets[1].name}</h3>
+      <h3>Chairman Meow</h3>
       <table>
         <thead>
           <tr>
@@ -253,15 +250,15 @@ const pets = [
         </thead>
         <tbody>
           <tr>
-            <td>{pets[1].age}</td>
-            <td>{pets[1].species}</td>
-            <td>{pets[1].breed}</td>
+            <td>8</td>
+            <td>cat</td>
+            <td>ragdoll</td>
           </tr>
         </tbody>
       </table>
     </li>
   </ul>
-</div>;
+</div>
 ```
 
 ---

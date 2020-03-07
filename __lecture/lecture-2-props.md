@@ -89,15 +89,28 @@ const UserProfile = ({ username, email, bio }) => {
 Make the components reusable by using props.
 
 ```jsx
-function VideoPlayer(props) {
+// function VideoPlayer(props) {
+//     return (
+//     <div>
+//       <video
+//         src={props.videoUrl}
+//         width={props.width}
+//         height={props.height}
+//       />
+//       <p>{props.description}</p>
+//     </div>
+//   );
+// }
+
+function VideoPlayer({videoUrl, width, heigth, decription}) {
   return (
     <div>
       <video
-        src="http://youtube.com/some-video"
-        width={480}
-        height={300}
+        src={videoUrl}
+        width={width}
+        height={height}
       />
-      <p>Cat playing the piano!!</p>
+      <p>{description}</p>
     </div>
   );
 }
@@ -106,17 +119,17 @@ function VideoPlayer(props) {
 ---
 
 ```jsx
-function Tweet(props) {
+function Tweet({imageUrl, name, handle, date, text}) {
   return (
     <div>
-      <Avatar src="/images/bunny.jpg" />
+      <Avatar src={imageUrl}/>
       <div>
         <p>
-          <span className="user-name">Mr. Bunny</span>
-          <span className="handle">@mr-bunny</span>
-          <span className="date">Oct 29th</span>
+          <span className="user-name">{name}</span>
+          <span className="handle">{handle}</span>
+          <span className="date">{date}th</span>
         </p>
-        <p>Alfalfa is the best food don't @ me</p>
+        <p>{text}</p>
         <div>
           <button>Reply</button>
           <button>Retweet</button>
@@ -132,14 +145,14 @@ function Tweet(props) {
 ---
 
 ```jsx
-function Header(props) {
+function Header(header, linkAbout, linkContact) {
   return (
     <header>
-      <h1>My great website</h1>
+      <h1>{header}</h1>
 
       <nav>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+        <a href={props.nav.first.url}>{props.nav.first.label}</a>
+        <a href={props.nav.second.url}>{props.nav.second.label}</a>
       </nav>
     </header>
   );
@@ -213,7 +226,7 @@ const storeItems = [
   { id: 'c', price: 44.99, name: 'Top Hat' },
 ];
 
-function App(props) {
+function App() {
   return (
     <div>
       {storeItems.map(item => (
@@ -236,6 +249,25 @@ Use `map` in the following snippets.
 const pets = [
   /* omitted */
 ];
+
+function App() {
+    return (
+        <div>
+        <h1 className="title">My pets:</h1>
+        <ul>
+        {props.pets.map(item => {
+            return (
+        <PetInfo 
+            name={props.pet.name} 
+            age={props.pet.age} 
+            species={props.pet.species} 
+            breed={props.pet.breed} 
+        />
+            )
+    ))}
+    </ul>
+</div>;
+
 
 <div>
   <h1 className="title">My pets:</h1>
@@ -284,11 +316,41 @@ const pizzaToppings = [
   { name: 'sausage', isVegetarian: false },
 ]
 
+function App() {
+pizzaTopping.map(item => {
+    return(
+        name = {item.name}
+
+    )
+
+    return (
+        <Topping 
+            name={props.pet.name} 
+            age={props.pet.age} 
+            species={props.pet.species} 
+            breed={props.pet.breed} 
+        />
+            )
+    ))}
+    </ul>
+</div>;
+
 <Pizza>
-  <Topping name="green pepper" />
-  <Topping name="broccoli" />
+  {pizzaToppings
+    .filter( topping => topping.isVegetarian)
+    .map(topping => <Topping name = {topping.name} />
+    )}
 </Pizza>
 ```
+
+
+
+
+// <Pizza>
+//   <Topping name="green pepper" />
+//   <Topping name="broccoli" />
+// </Pizza>
+// ```
 
 Hint: You'll need `filter` as well as `map`
 

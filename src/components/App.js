@@ -6,14 +6,21 @@ import Footer from './Footer';
 
 import './App.css';
 
-function App(props) {
-  return (
-    <div className="wrapper">
-      <Header />
-      <ChatStream />
-      <Footer />
-    </div>
-  );
+function App({ currentUser, conversation,}) {
+    // console.log(users.elaine.avatar)
+    return (
+        <div className="wrapper">
+            <Header className="header"
+                currentUser={currentUser}
+                participants={conversation.participants}
+            />
+            <ChatStream
+                currentUser={currentUser}
+                messages={conversation.messages}
+            />
+            <Footer />
+        </div>
+    );
 }
 
 export default App;

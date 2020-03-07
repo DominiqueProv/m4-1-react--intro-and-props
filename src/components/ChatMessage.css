@@ -1,0 +1,107 @@
+.chat-message {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+
+}
+
+.chat-message-other {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+
+}
+
+.avatar-container{
+    display: flex;
+    align-items: flex-end;
+}
+
+.avatar-container-other{
+    display: flex;
+    align-items: flex-end;
+}
+
+
+
+.other-container{
+    position: relative;
+}
+
+
+
+.container-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+.user-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+}
+
+.user-content-other {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+}
+
+.user-chat {
+    background-color: dodgerblue;
+    border-radius: 10px;
+    padding: 5px 20px;
+    display: inline;
+    color: white;
+    font-size: 1.2rem;
+
+}
+
+.other-chat {
+    background-color: #eaeaea;
+    border-radius: 10px;
+    padding: 5px 20px;
+    display: inline;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.user-name {
+    border-radius: 20px;
+    padding: 10px 20px 5px;
+    color: gray;
+    /* margin: -2px 0 0 0; */
+    font-size: .8em
+}
+
+.userAvatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 10px 10px 0 10px;
+}
+
+.other-tip{
+    position: absolute;
+    left:-8px;
+    top: 32px;
+    transform: scaleX(-1);
+
+}
+
+.tip-place{
+    position: relative;
+}
+
+.tip{
+    position: absolute;
+    left:-9px;
+    top: 43px;
+    transform: scaleX(-1);
+}
+
